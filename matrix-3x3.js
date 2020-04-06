@@ -1,16 +1,6 @@
-class Matrix3x3 extends Array {
-  constructor(matrix) {
-    if (matrix) {
-      this[0] = matrix[0];
-      this[1] = matrix[1];
-      this[2] = matrix[2];
-      this[3] = matrix[3];
-      this[4] = matrix[4];
-      this[5] = matrix[5];
-      this[6] = matrix[6];
-      this[7] = matrix[7];
-      this[8] = matrix[8];
-    }
+export class Matrix3x3 extends Array {
+  constructor(...matrix) {
+    super(...matrix /* array */);
   }
 
   identity() {
@@ -49,16 +39,6 @@ class Matrix3x3 extends Array {
   }
 
   clone() {
-    Matrix3x3 clone = new Matrix3x3();
-    clone[0] = this[0];
-    clone[1] = this[1];
-    clone[2] = this[2];
-    clone[3] = this[3];
-    clone[4] = this[4];
-    clone[5] = this[5];
-    clone[6] = this[6];
-    clone[7] = this[7];
-    clone[8] = this[8];
-    return clone;
+    return new Matrix3x3(...this);
   }
 }
